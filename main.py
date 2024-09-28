@@ -1,13 +1,19 @@
 from fastapi import FastAPI
+from web import explorer,creature
 
 app = FastAPI()
 
-
+app.include_router(explorer.router)
+app.include_router(creature.router)
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+def top():
+    return "Góra Mahometa"
 
-
-@app.get("/hello/{name}")
-async def say_hello(name: str):
-    return {"message": f"Hello {name}"}
+@app.get("/echo/{thing}")
+def echo(thing):
+    return f"Siema {thing}"
+#http -b localhost:8000/echo/bestia
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", reload=True) #reload — jeśli będzie jakaś zmiana to uvicorn będzie działał
+                                              # w sposób ciągły i restartował się jak będzie jakaś zmiana
