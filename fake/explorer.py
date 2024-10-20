@@ -1,7 +1,7 @@
 from model.explorer import Explorer
 
 _explorers = [
-    Explorer(name = "Menel pływak",
+    Explorer(name = "Menel_plywak",
              country = "PL",
              description = "Poszukiwacz w skarbu w jeziorze"),
     Explorer(name = "Adolf Kitler",
