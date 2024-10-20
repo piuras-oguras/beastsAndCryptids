@@ -17,7 +17,7 @@ def get_one(name: str) -> Explorer | None:
     for _explorer in _explorers:
         if _explorer.name == name:
             return _explorer
-        return None
+    return None
 
 def create(explorer: Explorer) -> Explorer:
     """Dodaj nowego odkrywcę"""

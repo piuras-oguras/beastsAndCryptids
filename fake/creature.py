@@ -21,7 +21,7 @@ def get_one(name: str) -> Creature | None:
     for _creature in _creatures:
         if _creature.name == name:
             return _creature
-        return None
+    return None
 
 def create(creature: Creature) -> Creature:
     """Dodaj nowego odkrywcę"""
